@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/reveal-section.js" defer></script>
+  <script src="js/registration.js" defer></script>
+  <script src="js/finalization.js" defer></script>
+  <script src="js/authorization.js" defer></script>
+  <script src="js/capture.js" defer></script>
+  <script src="js/reversal.js" defer></script>
+  <script src="js/refund.js" defer></script>
+  <script src="js/rp.js" defer></script>
+  <script src="js/rp-present.js" defer></script>
+  <script src="js/rp-not-present.js" defer></script>
+  <script src="js/form-submit.js" defer></script>
+  <title>Etisalat Payment Gateway Integration</title>
+</head>
+<body>
+  <main class="container">
+    <!-- Select API Container -->
+    <section class="select-api-container">
+      <form action="" class="select-api-form">
+        <label for="apiSelect">Select a Sample API</label>
+        <select id="apiSelect">
+          <option value="Registration">Registration</option>
+          <option value="Finalization">Finalization</option>
+          <option value="Authorization">Authorization</option>
+          <option value="Capture">Capture</option>
+          <option value="Reversal">Reversal</option>
+          <option value="Refund">Refund</option>
+          <option value="RP">Recurrence Payments</option>
+          <option value="RP_Present">Recurrence Payments - User Present</option>
+          <option value="RP_NotPresent">Recurrence Payments - User Not Present</option>
+        </select>
+      </form>
+    </section>
+
+    <!-- Send Response Container -->
+    <section class="send-response-container">
+
+      <!-- Registration Container -->
+      <div class="send-response-item registration" id="Registration">
+        <h1>Registration</h1>
+        <form action="" class="registration-form" id="registrationForm">
+
+          <!-- First Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="registrationCustomerId">Customer Name</label>
+              <input type="text" id="registrationCustomerId">
+            </div>
+            <div class="input-group">
+              <label for="registrationStore">Store</label>
+              <input type="text" id="registrationStore">
+            </div>
+            <div class="input-group">
+              <label for="registrationTerminal">Terminal</label>
+              <input type="text" id="registrationTerminal">
+            </div>
+          </div>
+
+          <!-- Second Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="registrationChannel">Channel</label>
+              <input type="text" id="registrationChannel">
+            </div>
+            <div class="input-group">
+              <label for="registrationAmount">Amount</label>
+              <input type="text" id="registrationAmount">
+            </div>
+            <div class="input-group">
+              <label for="registrationCurrency">Currency</label>
+              <input type="text" id="registrationCurrency">
+            </div>
+          </div>
+
+          <!-- Third Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="registrationOrderId">Order ID</label>
+              <input type="text" id="registrationOrderId">
+            </div>
+            <div class="input-group">
+              <label for="registrationOrderName">Order Name</label>
+              <input type="text" id="registrationOrderName">
+            </div>
+            <div class="input-group">
+              <label for="registrationOrderInfo">Order Info</label>
+              <input type="text" id="registrationOrderInfo">
+            </div>
+          </div>
+
+          <!-- Forth Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="registrationTransactionHint">Transaction Hint</label>
+              <input type="text" id="registrationTransactionHint">
+            </div>
+            <div class="input-group">
+              <label for="registrationReturnPath">Return Path</label>
+              <input type="text" id="registrationReturnPath">
+            </div>
+            <div class="input-group">
+              <label for="registrationUserName">User Name</label>
+              <input type="text" id="registrationUserName">
+            </div>
+          </div>
+
+          <!-- Fifth Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="registrationPassword">Password</label>
+              <input type="text" id="registrationPassword">
+            </div>
+          </div>
+
+          <button class="btn send-request-btn">Send Request</button>
+        </form>
+      </div>
+
+      <!-- Finalization Container -->
+      <div class="send-response-item finalization display-none" id="Finalization">
+        <h1>Finalization</h1>
+        <form action="" class="finalization-form" id="finalizationForm">
+
+          <!-- First Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="finalizationCustomerId">Customer Name</label>
+              <input type="text" id="finalizationCustomerId">
+            </div>
+            <div class="input-group">
+              <label for="finalizationTransactionID">Transaction ID</label>
+              <input type="text" id="finalizationTransactionID">
+            </div>
+            <div class="input-group">
+              <label for="finalizationUserName">User Name</label>
+              <input type="text" id="finalizationUserName">
+            </div>
+          </div>
+
+          <!-- Second Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="finalizationPassword">Password</label>
+              <input type="text" id="finalizationPassword">
+            </div>
+          </div>
+
+          <button class="btn send-request-btn">Send Request</button>
+        </form>
+      </div>
+
+      <!-- Authorization Container -->
+      <div class="send-response-item authorization display-none" id="Authorization">
+        <h1>Authorization</h1>
+        <form action="" class="authorization-form" id="authorizationForm">
+
+          <!-- First Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="authorizationCustomerId">Customer Name</label>
+              <input type="text" id="authorizationCustomerId">
+            </div>
+            <div class="input-group">
+              <label for="authorizationStore">Store</label>
+              <input type="text" id="authorizationStore">
+            </div>
+            <div class="input-group">
+              <label for="authorizationTerminal">Terminal</label>
+              <input type="text" id="authorizationTerminal">
+            </div>
+          </div>
+
+          <!-- Second Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="authorizationLanguage">Language</label>
+              <input type="text" id="authorizationLanguage">
+            </div>
+            <div class="input-group">
+              <label for="authorizationChannel">Channel</label>
+              <input type="text" id="authorizationChannel">
+            </div>
+            <div class="input-group">
+              <label for="authorizationAmount">Amount</label>
+              <input type="text" id="authorizationAmount">
+            </div>
+          </div>
+
+          <!-- Third Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="authorizationCurrency">Currency</label>
+              <input type="text" id="authorizationCurrency">
+            </div>
+            <div class="input-group">
+              <label for="authorizationTransactionHint">Transaction Hint</label>
+              <input type="text" id="authorizationTransactionHint">
+            </div>
+            <div class="input-group">
+              <label for="authorizationOrderID">Order ID</label>
+              <input type="text" id="authorizationOrderID">
+            </div>
+          </div>
+
+          <!-- Forth Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="authorizationOrderName">Order Name</label>
+              <input type="text" id="authorizationOrderName">
+            </div>
+            <div class="input-group">
+              <label for="authorizationCardNumber">Card Number</label>
+              <input type="text" id="authorizationCardNumber">
+            </div>
+            <div class="input-group">
+              <label for="authorizationExpiryMonth">Expiry Month</label>
+              <input type="text" id="authorizationExpiryMonth">
+            </div>
+          </div>
+
+          <!-- Fifth Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="authorizationExpiryYear">Expiry Year</label>
+              <input type="text" id="authorizationExpiryYear">
+            </div>
+            <div class="input-group">
+              <label for="authorizationCardTrack2">Card Track 02</label>
+              <input type="text" id="authorizationCardTrack2">
+            </div>
+            <div class="input-group">
+              <label for="authorizationVerifyCode">Verify Code</label>
+              <input type="text" id="authorizationVerifyCode">
+            </div>
+          </div>
+
+          <!-- Sixth Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="authorizationUserName">User Name</label>
+              <input type="text" id="authorizationUserName">
+            </div>
+            <div class="input-group">
+              <label for="authorizationPassword">Password</label>
+              <input type="text" id="authorizationPassword">
+            </div>
+          </div>
+
+          <button class="btn send-request-btn">Send Request</button>
+        </form>
+      </div>
+
+      <!-- Capture Container -->
+      <div class="send-response-item capture display-none" id="Capture">
+        <h1>Capture</h1>
+        <form action="" class="capture-form" id="captureForm">
+
+          <!-- First Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="captureCustomerId">Customer Name</label>
+              <input type="text" id="captureCustomerId">
+            </div>
+            <div class="input-group">
+              <label for="captureStore">Store</label>
+              <input type="text" id="captureStore">
+            </div>
+            <div class="input-group">
+              <label for="captureTerminal">Terminal</label>
+              <input type="text" id="captureTerminal">
+            </div>
+          </div>
+
+          <!-- Second Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="captureTransactionID">Transaction ID</label>
+              <input type="text" id="captureTransactionID">
+            </div>
+            <div class="input-group">
+              <label for="captureAmount">Amount</label>
+              <input type="text" id="captureAmount">
+            </div>
+            <div class="input-group">
+              <label for="captureCurrency">Currency</label>
+              <input type="text" id="captureCurrency">
+            </div>
+          </div>
+
+          <!-- Third Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="captureUserName">User Name</label>
+              <input type="text" id="captureUserName">
+            </div>
+            <div class="input-group">
+              <label for="captureTransactionHint">Transaction Hint</label>
+              <input type="text" id="captureTransactionHint">
+            </div>
+            <div class="input-group">
+              <label for="capturePassword">Password</label>
+              <input type="text" id="capturePassword">
+            </div>
+          </div>
+
+          <button class="btn send-request-btn">Send Request</button>
+        </form>
+      </div>
+
+      <!-- Reversal Container -->
+      <div class="send-response-item reversal display-none" id="Reversal">
+        <h1>Reversal</h1>
+        <form action="" class="reversal-form" id="reversalForm">
+
+          <!-- First Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="reversalCustomerId">Customer Name</label>
+              <input type="text" id="reversalCustomerId">
+            </div>
+            <div class="input-group">
+              <label for="reversalStore">Store</label>
+              <input type="text" id="reversalStore">
+            </div>
+            <div class="input-group">
+              <label for="reversalTerminal">Terminal</label>
+              <input type="text" id="reversalTerminal">
+            </div>
+          </div>
+
+          <!-- Second Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="reversalTransactionID">Transaction ID</label>
+              <input type="text" id="reversalTransactionID">
+            </div>
+            <div class="input-group">
+              <label for="reversalAmount">Amount</label>
+              <input type="text" id="reversalAmount">
+            </div>
+            <div class="input-group">
+              <label for="reversalCurrency">Currency</label>
+              <input type="text" id="reversalCurrency">
+            </div>
+          </div>
+
+          <!-- Third Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="reversalUserName">User Name</label>
+              <input type="text" id="reversalUserName">
+            </div>
+            <div class="input-group">
+              <label for="reversalPassword">Password</label>
+              <input type="text" id="reversalPassword">
+            </div>
+          </div>
+
+          <button class="btn send-request-btn">Send Request</button>
+        </form>
+      </div>
+
+      <!-- Refund Container -->
+      <div class="send-response-item refund display-none" id="Refund">
+        <h1>Refund</h1>
+        <form action="" class="refund-form" id="refundForm">
+
+          <!-- First Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="refundCustomerId">Customer Name</label>
+              <input type="text" id="refundCustomerId">
+            </div>
+            <div class="input-group">
+              <label for="refundStore">Store</label>
+              <input type="text" id="refundStore">
+            </div>
+            <div class="input-group">
+              <label for="refundTerminal">Terminal</label>
+              <input type="text" id="refundTerminal">
+            </div>
+          </div>
+
+          <!-- Second Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="refundTransactionID">Transaction ID</label>
+              <input type="text" id="refundTransactionID">
+            </div>
+            <div class="input-group">
+              <label for="refundAmount">Amount</label>
+              <input type="text" id="refundAmount">
+            </div>
+            <div class="input-group">
+              <label for="refundCurrency">Currency</label>
+              <input type="text" id="refundCurrency">
+            </div>
+          </div>
+
+          <!-- Third Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="refundUserName">User Name</label>
+              <input type="text" id="refundUserName">
+            </div>
+            <div class="input-group">
+              <label for="refundPassword">Password</label>
+              <input type="text" id="refundPassword">
+            </div>
+          </div>
+
+          <button class="btn send-request-btn">Send Request</button>
+        </form>
+      </div>
+
+      <!-- Recurrence Payments Container -->
+      <div class="send-response-item rp display-none" id="RP">
+        <h1>Recurrence Payments</h1>
+        <form action="" class="rp-form" id="rpForm">
+
+          <!-- First Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="rpCustomerId">Customer Name</label>
+              <input type="text" id="rpCustomerId">
+            </div>
+            <div class="input-group">
+              <label for="rpLanguage">Language</label>
+              <input type="text" id="rpLanguage">
+            </div>
+            <div class="input-group">
+              <label for="rpOrderName">Order Name</label>
+              <input type="text" id="rpOrderName">
+            </div>
+          </div>
+
+          <!-- Second Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="rpOrderID">Order ID</label>
+              <input type="text" id="rpOrderID">
+            </div>
+            <div class="input-group">
+              <label for="rpAmount">Amount</label>
+              <input type="text" id="rpAmount">
+            </div>
+            <div class="input-group">
+              <label for="rpCurrency">Currency</label>
+              <input type="text" id="rpCurrency">
+            </div>
+          </div>
+
+          <!-- Third Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="rpRecurrenceType">Recurrence Type</label>
+              <input type="text" id="rpRecurrenceType">
+            </div>
+            <div class="input-group">
+              <label for="rpOrderInfo">Order Info</label>
+              <input type="text" id="rpOrderInfo">
+            </div>
+            <div class="input-group">
+              <label for="rpTransactionHint">Transaction Hint</label>
+              <input type="text" id="rpTransactionHint">
+            </div>
+          </div>
+
+          <!-- Forth Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="rpReturnPath">Return Path</label>
+              <input type="text" id="rpReturnPath">
+            </div>
+          </div>
+
+          <button class="btn send-request-btn">Send Request</button>
+        </form>
+      </div>
+
+      <!-- Recurrence Payments Container -->
+      <div class="send-response-item rp-present display-none" id="RP_Present">
+        <h1>Recurrence Payments - User Present</h1>
+        <form action="" class="rp-present-form" id="RP_PresentForm">
+
+          <!-- First Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="RP_PresentVersion">Version</label>
+              <input type="text" id="RP_PresentVersion">
+            </div>
+            <div class="input-group">
+              <label for="RP_PresentCustomerId">Customer Name</label>
+              <input type="text" id="RP_PresentCustomerId">
+            </div>
+            <div class="input-group">
+              <label for="RP_PresentLanguage">Language</label>
+              <input type="text" id="RP_PresentLanguage">
+            </div>
+          </div>
+
+          <!-- Second Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="RP_PresentOrderName">Order Name</label>
+              <input type="text" id="RP_PresentOrderName">
+            </div>
+            <div class="input-group">
+              <label for="RP_PresentOrderID">Order ID</label>
+              <input type="text" id="RP_PresentOrderID">
+            </div>
+            <div class="input-group">
+              <label for="RP_PresentAmount">Amount</label>
+              <input type="text" id="RP_PresentAmount">
+            </div>
+          </div>
+
+          <!-- Third Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="RP_PresentCurrency">Currency</label>
+              <input type="text" id="RP_PresentCurrency">
+            </div>
+            <div class="input-group">
+              <label for="RP_PresentReturnPath">Return Path</label>
+              <input type="text" id="RP_PresentReturnPath">
+            </div>
+            <div class="input-group">
+              <label for="RP_PresentOrderInfo">Order Info</label>
+              <input type="text" id="RP_PresentOrderInfo">
+            </div>
+          </div>
+
+          <!-- Forth Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="RP_PresentTransactionHint">Transaction Hint</label>
+              <input type="text" id="RP_PresentTransactionHint">
+            </div>
+            <div class="input-group">
+              <label for="RP_PresentRecurrenceID">Recurrence ID</label>
+              <input type="text" id="RP_PresentRecurrenceID">
+            </div>
+          </div>
+
+          <button class="btn send-request-btn">Send Request</button>
+        </form>
+      </div>
+
+      <!-- Recurrence Payments Container -->
+      <div class="send-response-item rp-not-present display-none" id="RP_NotPresent">
+        <h1>Recurrence Payments - User Not Present</h1>
+        <form action="" class="rp-not-present-form" id="RP_NotPresentForm">
+
+          <!-- First Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="RP_NotPresentCurrency">Currency</label>
+              <input type="text" id="RP_NotPresentCurrency">
+            </div>
+            <div class="input-group">
+              <label for="RP_NotPresentTransactionHint">Transaction Hint</label>
+              <input type="text" id="RP_NotPresentTransactionHint">
+            </div>
+            <div class="input-group">
+              <label for="RP_NotPresentOrderID">Order ID</label>
+              <input type="text" id="RP_NotPresentOrderID">
+            </div>
+          </div>
+
+          <!-- Second Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="RP_NotPresentChannel">Channel</label>
+              <input type="text" id="RP_NotPresentChannel">
+            </div>
+            <div class="input-group">
+              <label for="RP_NotPresentAmount">Amount</label>
+              <input type="text" id="RP_NotPresentAmount">
+            </div>
+            <div class="input-group">
+              <label for="RP_NotPresentCustomerId">Customer Name</label>
+              <input type="text" id="RP_NotPresentCustomerId">
+            </div>
+          </div>
+
+          <!-- Third Row -->
+          <div class="grid">
+            <div class="input-group">
+              <label for="RP_NotPresentTransactionID">Transaction ID</label>
+              <input type="text" id="RP_NotPresentTransactionID">
+            </div>
+            <div class="input-group">
+              <label for="RP_NotPresentOrderName">Order Name</label>
+              <input type="text" id="RP_NotPresentOrderName">
+            </div>
+          </div>
+
+          <button class="btn send-request-btn">Send Request</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Get Response Container -->
+    <section class="get-response-container display-none" id="getResponseContainer"></section>
+  </main>
+</body>
+</html>

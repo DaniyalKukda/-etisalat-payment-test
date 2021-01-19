@@ -1,0 +1,192 @@
+/*
+  Table of Contents:
+    1. Fonts Import
+    2. Global Styles
+    3. Select API Container
+    4. Send Response Container
+    5. Get Response Container
+*/
+
+/* 1. Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+/* 2. Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+:root {
+  --projectBackground: #f7f7f7;
+  --containerBackground: #fff;
+
+  --borderColor: rgba(0, 0, 0, 0.3);
+  --lightBorderColor: rgba(0, 0, 0, 0.1);
+  --headTextColor: #7158e2;
+  --btnColor: #7158e2;
+  --btnColorHover: #7d5fff;
+  --boxShadowColor: rgba(125, 95, 255, 0.4);
+}
+
+html {
+  font-size: 10px;
+  background: var(--projectBackground);
+}
+
+.container {
+  max-width: 117rem;
+  margin: 6rem auto;
+  padding: 6rem 2rem;
+  background: var(--containerBackground);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+input,
+select {
+  padding: 1rem;
+  border: 0.1rem solid var(--borderColor);
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus,
+select:focus {
+  box-shadow: 0 0 1rem 0.1rem var(--boxShadowColor);
+}
+
+.display-none {
+  display: none;
+}
+
+/* 3. Select API Container */
+.select-api-form {
+  margin: auto;
+  width: 20%;
+  min-width: 30rem;
+}
+
+.select-api-form select {
+  width: 100%;
+}
+
+/* 4. Send Response Container */
+.send-response-container {
+  margin: 10rem 0 0;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.send-response-item h1,
+.get-response-container h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--headTextColor);
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.send-response-item h1::before {
+  content: "";
+  width: 10rem;
+  height: 0.3rem;
+  position: absolute;
+  background-color: var(--btnColorHover);
+  border-radius: 0.5rem;
+  top: -2rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+.goToPayment-btn {
+  background-color: #719e19 !important;
+}
+.send-request-btn,
+.submit-btn {
+  margin: 3rem auto 0;
+  padding: 1rem 3rem;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background-color: var(--headTextColor);
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.send-request-btn:hover,
+.submit-btn:hover {
+  background-color: var(--btnColorHover);
+  cursor: pointer;
+}
+
+/* 5. Get Response Container */
+.get-response-container {
+  margin-top: 10rem;
+}
+
+.get-response-container h1 {
+  text-align: center;
+}
+
+.response-table {
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+}
+
+.response-row {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.response-row + .response-row {
+  border-top: 0.1rem solid var(--lightBorderColor);
+}
+
+.response-col {
+  font-size: 1.6rem;
+}
+
+.response-key {
+  font-weight: 500;
+  flex-basis: 30%;
+}
+
+.response-value {
+  text-align: right;
+  flex-basis: 60%;
+}
+
+.response-value a {
+  color: black;
+}
+
+.payment-portal-form {
+  text-align: center;
+}

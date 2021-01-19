@@ -1,0 +1,11 @@
+@media screen and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .container {
+    padding: 6rem 1rem;
+  }
+}
